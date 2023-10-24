@@ -1,17 +1,17 @@
 
 
-def cancellation(list, stop_word):
+def cancellation(input_list, stop_word):
     '''
     Copy elements one by one from input_list into output_list. 
     If one of the elements is equal to the stop_word, then stop the function,
     and return what you have so far.
     '''
-    output_list = []
-    for element in list:
-        if element==stop_word:
+    outputlist = []
+    for x in input_list:
+        if x==stop_word:
             break
-            output_list.append(element)
-            return output_list
+            outputlist.append(x)
+            return outputlist
 
 def copy_all_but_skip_word(input_list, skip_word):
     '''
