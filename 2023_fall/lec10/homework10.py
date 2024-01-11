@@ -16,7 +16,11 @@ def waveform_to_frames(waveform, frame_length, step):
     For every n and t such that 0 <= t*step+n <= N-1, it should be the case that 
        frames[n,t] = waveform[t*step+n]
     '''
-    raise RuntimeError("You need to change this part")
+    num_frames = int((len(waveform)-frame_length)/step)
+    speech_frames = np.zeros((frame_length,num_frames))
+    for frame in range(num_frames):
+        speech_frames[:,frame]=waveform[frame*step:frame*step+frame_length]
+    return speech_frames
 
 def frames_to_stft(frames):
     '''
